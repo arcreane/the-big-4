@@ -4,8 +4,9 @@ import 'board.dart';
 class GameBody extends StatelessWidget {
   const GameBody({Key? key}) : super(key: key);
 
-  @override // we call the widget cell 6 times and fusion it to a Column to make a column with 6 cell
+  @override
   Widget build(BuildContext context) {
+    //sipmli call the class board to have here just what we needed for the game
     return Board();
   }
 }
