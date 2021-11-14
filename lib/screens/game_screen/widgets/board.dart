@@ -8,6 +8,7 @@ class Board extends StatelessWidget {
   Widget build(BuildContext context) {
     //Call the class board column and "fusion" all the board column with a Row object to make the full board
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         BoardColumn(),
         BoardColumn(),
