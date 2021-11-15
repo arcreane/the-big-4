@@ -18,7 +18,7 @@ class Cell extends StatelessWidget {
           alignment: Alignment.center,
           child: Coin(
             coinColor: Colors
-                .blue, // call the class coin to fill the cell with a color of our choice, here it will be the color of a player.
+                .white, // call the class coin to fill the cell with a color of our choice, here it will be the color of a player.
           ),
         )),
       ],
