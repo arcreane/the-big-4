@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Avatar extends StatefulWidget {
-  Avatar({this.url, this.size});
+  Avatar({required this.url, required this.size});
   final String url;
   final double size;
   @override

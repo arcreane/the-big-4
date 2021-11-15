@@ -1,10 +1,9 @@
-// ignore: file_names
-// ignore: file_names
-
-// ignore_for_file: prefer_equal_for_default_values
-
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'dart:math';
+import 'package:get/get.dart';
+import 'screens/game_screen/game_screen.dart';
+import 'package:the_big_4/screens/game_screen/game_screen.dart';
 
 class NextPage extends StatefulWidget {
   final String name;
@@ -23,82 +22,16 @@ class _NextPageState extends State<NextPage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      
-      backgroundColor: Colors.blue,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            FlatButton(
-              color: Colors.green,
-              padding: EdgeInsets.all(15),
-              child: Text(
-                '🧑 2 JOUEURS 🧑',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: Colors.white),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  '/match',
-                  arguments: {
-                    'mode': Mode.PVP,
-                  },
-                );
-              },
-            ),
-            FlatButton(
-              color: Colors.orange,
-              padding: EdgeInsets.all(15),
-              child: Text(
-                '🧑 1 JOUEUR 🤖',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: Colors.white),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  '/cpu-level',
-                  arguments: {
-                    'mode': Mode.PVC,
-                  },
-                );
-              },
-            ),
-            FlatButton(
-              color: Colors.white,
-              padding: EdgeInsets.all(15),
-              child: Text(
-                '🤖 DEMO 🤖',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: Colors.black),
-              ),
-              onPressed: () {
-                final harderCpu =
-                HarderCpu(Random().nextBool() ? Color.RED : Color.YELLOW);
-                Navigator.pushNamed(
-                  context,
-                  '/match',
-                  arguments: {
-                    'mode': Mode.DEMO,
-                    'cpu': harderCpu,
-                    'cpu2': HardestCpu(harderCpu.otherPlayer),
-                  },
-                );
-              },
-            ),
-          ],
-        ),
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => GameScreen()),
+      ],
     );
   }
 }

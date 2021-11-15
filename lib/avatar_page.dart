@@ -23,7 +23,7 @@ class _AvatarPageState extends State<AvatarPage> {
 
   void _updateName(String name) {
     final form = formKey.currentState;
-    if (form.validate()) {
+    if (form!.validate()) {
       form.save();
       setState(() {});
       print('Saved: $_name');
@@ -92,8 +92,8 @@ class _AvatarPageState extends State<AvatarPage> {
               labelStyle: new TextStyle(fontSize: 20.0),
             ),
             style: new TextStyle(fontSize: 24.0, color: Colors.black),
-            validator: (val) => val.isEmpty ? 'Name can\'t be empty' : null,
-            onSaved: (name) => _name = name,
+            validator: (val) => val!.isEmpty ? 'Name can\'t be empty' : null,
+            onSaved: (name) => _name = name!,
             onFieldSubmitted: (name) => _updateName(name),
           ))
     ];
@@ -123,7 +123,7 @@ class MonLayout extends StatelessWidget{
   }
 }
 class VerticalPadding extends StatelessWidget {
-  VerticalPadding({this.child});
+  VerticalPadding({required this.child});
   final Widget child;
 
   @override
