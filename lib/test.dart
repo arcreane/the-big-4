@@ -1,8 +1,15 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-class AudioPlayerSong extends StatefulWidget {
+
+
+
+
+
+
+
+/*class AudioPlayerSong extends StatefulWidget {
   @override
   _AudioPlayerSong createState() => _AudioPlayerSong();
 }//fin class player
@@ -18,7 +25,6 @@ class _AudioPlayerSong extends State<AudioPlayerSong> {
     super.initState();
     audioCache = AudioCache(fixedPlayer: audioPlayer);
     audioPlayer.onPlayerStateChanged.listen((event) {
-      
 
     });
 
@@ -28,4 +34,4 @@ class _AudioPlayerSong extends State<AudioPlayerSong> {
   Widget build(BuildContext context){
     return Container();
   }
-}
+}*/
